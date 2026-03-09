@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zubair Shoes - Premium footwear for men, women, and kids. Shop sneakers, formal shoes, boots, and sandals.">
+    <meta name="keywords" content="shoes, footwear, sneakers, boots, sandals, online shopping">
+    <title>Zubair Shoes | Premium Footwear for Everyone</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo" aria-label="Zubair Shoes Home">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Zubair</span> Shoes
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link active" role="menuitem">Home</a></li>
+                <li role="none"><a href="shop.html" class="nav-link" role="menuitem">Shop</a></li>
+                <li role="none"><a href="about.html" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="blog.html" class="nav-link" role="menuitem">Blog</a></li>
+                <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                <li role="none">
+                    <a href="cart.html" class="nav-link cart-icon" role="menuitem" aria-label="Shopping cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" role="banner">
+        <div class="hero-content" data-aos="fade-right">
+            <h1 class="hero-title">Step Into Style with Zubair</h1>
+            <p class="hero-subtitle">Discover premium footwear crafted for comfort, durability, and unmatched style. From casual sneakers to elegant formal wear.</p>
+            <div class="hero-buttons">
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+                <a href="#categories" class="btn btn-secondary">Explore Categories</a>
+            </div>
+        </div>
+        <div class="hero-image" data-aos="fade-left">
+            <img src="https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=800&auto=format&fit=crop" alt="Premium Zubair Sneaker" loading="eager">
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section id="categories" class="categories" aria-labelledby="categories-heading">
+        <div class="container">
+            <h2 id="categories-heading" class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <a href="shop.html?category=sneakers" class="category-card" data-aos="zoom-in">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&auto=format&fit=crop" alt="Sneakers collection" loading="lazy">
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Sneakers</h3>
+                        <span>Shop Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="shop.html?category=formal" class="category-card" data-aos="zoom-in">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400&auto=format&fit=crop" alt="Formal shoes collection" loading="lazy">
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Formal Shoes</h3>
+                        <span>Shop Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="shop.html?category=boots" class="category-card" data-aos="zoom-in">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1549639426-52d8332557c6?w=400&auto=format&fit=crop" alt="Boots collection" loading="lazy">
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Boots</h3>
+                        <span>Shop Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                
+                <a href="shop.html?category=sandals" class="category-card" data-aos="zoom-in">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1560769629-975e13f0c470?w=400&auto=format&fit=crop" alt="Sandals collection" loading="lazy">
+                    </div>
+                    <div class="category-overlay">
+                        <h3>Sandals</h3>
+                        <span>Shop Now <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Carousel -->
+    <section class="best-sellers" aria-labelledby="bestsellers-heading">
+        <div class="container">
+            <h2 id="bestsellers-heading" class="section-title">Best Sellers</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" aria-label="Previous products">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="carousel-track" id="bestsellersTrack">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+                
+                <button class="carousel-btn next" aria-label="Next products">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" aria-labelledby="features-heading">
+        <div class="container">
+            <h2 id="features-heading" class="section-title">Why Choose Zubair</h2>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="flip-up">
+                    <i class="fas fa-truck-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>Free delivery on orders over ₹8,000. Express shipping available.</p>
+                </div>
+                <div class="feature-card" data-aos="flip-up">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Quality Guarantee</h3>
+                    <p>30-day money-back guarantee on all purchases.</p>
+                </div>
+                <div class="feature-card" data-aos="flip-up">
+                    <i class="fas fa-headset"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Our customer service team is always here to help.</p>
+                </div>
+                <div class="feature-card" data-aos="flip-up">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure Payment</h3>
+                    <p>Your data is protected with industry-standard encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+        <div class="container">
+            <h2 id="testimonials-heading" class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider" id="testimonialSlider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The most comfortable sneakers I've ever owned. The quality is outstanding and the delivery was super fast!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop" alt="Sarah Johnson">
+                            <div>
+                                <h4>Sarah Johnson</h4>
+                                <span>Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Excellent customer service and amazing product range. My go-to store for all footwear needs."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop" alt="Michael Chen">
+                            <div>
+                                <h4>Michael Chen</h4>
+                                <span>Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-stroke"></i>
+                        </div>
+                        <p>"Great value for money. The boots I bought have lasted over a year and still look brand new."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop" alt="Emily Davis">
+                            <div>
+                                <h4>Emily Davis</h4>
+                                <span>Verified Buyer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots" id="testimonialDots"></div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" aria-labelledby="newsletter-heading">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 id="newsletter-heading">Join Our Newsletter</h2>
+                <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+                <form class="newsletter-form" id="newsletterForm" novalidate>
+                    <div class="form-group">
+                        <input type="email" id="newsletterEmail" placeholder="Enter your email address" required aria-label="Email address">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                    <span class="error-message" id="newsletterError"></span>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>Zubair</span> Shoes
+                    </a>
+                    <p>Your destination for premium footwear. Quality, comfort, and style in every step.</p>
+                    <div class="social-links">
+                        <a href="javascript:void(0)" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="javascript:void(0)" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="javascript:void(0)" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="javascript:void(0)" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop All</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="shipping.html">Shipping & Returns</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 MG Road, Mumbai, MH 400001</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> hello@zubairshoes.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zubair Shoes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration: 800, once: true});</script>
+</body>
+</html>

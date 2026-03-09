@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently asked questions about Zubair Shoes - orders, shipping, returns, and more.">
+    <title>FAQ | Zubair Shoes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Zubair</span> Shoes
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header faq-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions</p>
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">FAQ</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="faq-cat-btn active" data-category="all">All</button>
+                <button class="faq-cat-btn" data-category="orders">Orders</button>
+                <button class="faq-cat-btn" data-category="shipping">Shipping</button>
+                <button class="faq-cat-btn" data-category="returns">Returns</button>
+                <button class="faq-cat-btn" data-category="product">Product</button>
+            </div>
+
+            <div class="faq-accordion" id="faqAccordion">
+                <!-- Order Questions -->
+                <div class="faq-item" data-category="orders">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I place an order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Placing an order is easy! Simply browse our collection, select your desired product, choose your size and color, then click "Add to Cart." When you're ready to checkout, click on the cart icon and follow the prompts to complete your purchase.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="orders">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I modify or cancel my order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Orders can be modified or cancelled within 1 hour of placing them. Please contact our customer service team immediately at support@zubairshoes.com or call us at +91 98765 43210.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="orders">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How can I track my order?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once your order ships, you'll receive an email with a tracking number. You can use this number on our website or the carrier's website to track your package in real-time.</p>
+                    </div>
+                </div>
+
+                <!-- Shipping Questions -->
+                <div class="faq-item" data-category="shipping">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What are the shipping options?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer Standard Shipping (5-7 business days), Express Shipping (2-3 business days), and Next Day Delivery. Free standard shipping is available on orders over ₹8,000.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="shipping">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you ship internationally?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We ship to over 50 countries worldwide. International shipping rates and delivery times vary by location. Customs fees may apply depending on your country.</p>
+                    </div>
+                </div>
+
+                <!-- Returns Questions -->
+                <div class="faq-item" data-category="returns">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is your return policy?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a 30-day return policy for unworn items in original packaging. Simply initiate a return through your account or contact our support team. Refunds are processed within 5-7 business days after we receive the item.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="returns">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I exchange an item for a different size?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To exchange for a different size, please return the original item and place a new order for the correct size. This ensures faster processing and guarantees the item is in stock.</p>
+                    </div>
+                </div>
+
+                <!-- Product Questions -->
+                <div class="faq-item" data-category="product">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How do I find my correct shoe size?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Check our detailed size guide available on each product page. We recommend measuring your foot length and comparing it to our size chart. If you're between sizes, we suggest sizing up for comfort.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="product">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Are your shoes true to size?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most of our shoes run true to size, but some brands may vary slightly. Check individual product descriptions for specific sizing notes. Customer reviews can also provide helpful sizing insights.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="product">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How should I care for my shoes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Care instructions vary by material. Generally, we recommend using a soft brush for cleaning, avoiding direct sunlight when drying, and using appropriate protectants for leather or suede. Check our blog for detailed care guides.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-contact">
+                <h3>Still have questions?</h3>
+                <p>Can't find the answer you're looking for? Please contact our friendly team.</p>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>Zubair</span> Shoes
+                    </a>
+                    <p>Your destination for premium footwear.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zubair Shoes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration: 800, once: true});</script>
+</body>
+</html>

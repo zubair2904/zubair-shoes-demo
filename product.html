@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product details - Zubair Shoes">
+    <title>Product Details | Zubair Shoes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Zubair</span> Shoes
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <div class="container">
+            <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li id="breadcrumbProduct" aria-current="page">Product</li>
+                </ol>
+            </nav>
+
+            <div class="product-detail-grid">
+                <!-- Product Images -->
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="mainImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Product main image">
+                        <button class="zoom-btn" id="zoomBtn"><i class="fas fa-search-plus"></i></button>
+                    </div>
+                    <div class="thumbnail-list" id="thumbnailList">
+                        <!-- Thumbnails inserted dynamically -->
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-header">
+                        <span class="product-brand" id="productBrand"></span>
+                        <h1 class="product-title" id="productName"></h1>
+                        <div class="product-rating">
+                            <div class="stars" id="productStars"></div>
+                            <span class="review-count" id="reviewCount"></span>
+                        </div>
+                        <div class="product-price" id="productPrice"></div>
+                    </div>
+
+                    <div class="product-description" id="productDescription"></div>
+
+                    <div class="product-options">
+                        <!-- Color Selection -->
+                        <div class="option-group">
+                            <label>Color: <span id="selectedColor"></span></label>
+                            <div class="color-selector" id="colorSelector"></div>
+                        </div>
+
+                        <!-- Size Selection -->
+                        <div class="option-group">
+                            <label for="sizeSelect">Size:</label>
+                            <select id="sizeSelect" class="size-select">
+                                <option value="">Select Size</option>
+                            </select>
+                            <a href="javascript:void(0)" class="size-guide-link">Size Guide</a>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="option-group">
+                            <label for="quantityInput">Quantity:</label>
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="qtyMinus">-</button>
+                                <input type="number" id="quantityInput" value="1" min="1" max="10">
+                                <button class="qty-btn" id="qtyPlus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <button class="btn btn-primary btn-large" id="addToCartBtn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-wishlist" id="addToWishlistBtn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>In Stock</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping over ₹8,000</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specs">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="description" class="tab-panel active">
+                        <h3>Product Description</h3>
+                        <p id="fullDescription"></p>
+                    </div>
+                    
+                    <div id="specs" class="tab-panel">
+                        <h3>Specifications</h3>
+                        <table class="specs-table" id="specsTable">
+                            <!-- Specs inserted dynamically -->
+                        </table>
+                    </div>
+                    
+                    <div id="reviews" class="tab-panel">
+                        <h3>Customer Reviews</h3>
+                        <div class="reviews-list" id="reviewsList">
+                            <!-- Reviews inserted dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="related-products">
+                <h2>You May Also Like</h2>
+                <div class="products-grid" id="relatedProducts">
+                    <!-- Related products inserted dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Zoom Modal -->
+    <div class="zoom-modal" id="zoomModal">
+        <button class="close-modal" id="closeZoom"><i class="fas fa-times"></i></button>
+        <img id="zoomedImage" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Zoomed product image">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>Zubair</span> Shoes
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zubair Shoes</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration: 800, once: true});</script>
+</body>
+</html>

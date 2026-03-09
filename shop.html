@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop premium footwear at Zubair Shoes. Browse sneakers, formal shoes, boots, and sandals for men, women, and kids.">
+    <title>Shop | Zubair Shoes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shoe-prints"></i>
+                <span>Zubair</span> Shoes
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="shop.html" class="nav-link active">Shop</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="cart.html" class="nav-link cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Collection</h1>
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li aria-current="page">Shop</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop-section">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                        <button class="close-filters" id="closeFilters" aria-label="Close filters">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="sneakers">
+                                <span class="checkmark"></span>
+                                Sneakers
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="formal">
+                                <span class="checkmark"></span>
+                                Formal Shoes
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="boots">
+                                <span class="checkmark"></span>
+                                Boots
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="category" value="sandals">
+                                <span class="checkmark"></span>
+                                Sandals
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Gender Filter -->
+                    <div class="filter-group">
+                        <h4>Gender</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="gender" value="men">
+                                <span class="checkmark"></span>
+                                Men
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="gender" value="women">
+                                <span class="checkmark"></span>
+                                Women
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="gender" value="kids">
+                                <span class="checkmark"></span>
+                                Kids
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand Filter -->
+                    <div class="filter-group">
+                        <h4>Brand</h4>
+                        <div class="filter-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="brand" value="nike">
+                                <span class="checkmark"></span>
+                                Nike
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="brand" value="adidas">
+                                <span class="checkmark"></span>
+                                Adidas
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="brand" value="puma">
+                                <span class="checkmark"></span>
+                                Puma
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="brand" value="reebok">
+                                <span class="checkmark"></span>
+                                Reebok
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <h4>Size</h4>
+                        <div class="size-options">
+                            <button class="size-btn" data-size="6">6</button>
+                            <button class="size-btn" data-size="7">7</button>
+                            <button class="size-btn" data-size="8">8</button>
+                            <button class="size-btn" data-size="9">9</button>
+                            <button class="size-btn" data-size="10">10</button>
+                            <button class="size-btn" data-size="11">11</button>
+                            <button class="size-btn" data-size="12">12</button>
+                        </div>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <h4>Color</h4>
+                        <div class="color-options">
+                            <button class="color-btn" data-color="black" style="background-color: #000;" aria-label="Black"></button>
+                            <button class="color-btn" data-color="white" style="background-color: #fff;" aria-label="White"></button>
+                            <button class="color-btn" data-color="red" style="background-color: #e53935;" aria-label="Red"></button>
+                            <button class="color-btn" data-color="blue" style="background-color: #1e88e5;" aria-label="Blue"></button>
+                            <button class="color-btn" data-color="brown" style="background-color: #8d6e63;" aria-label="Brown"></button>
+                        </div>
+                    </div>
+
+                    <!-- Price Filter -->
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="300" value="300">
+                            <div class="price-labels">
+                                <span>₹0</span>
+                                <span id="priceValue">₹24,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-secondary btn-full" id="clearFilters">Clear All Filters</button>
+                </aside>
+
+                <!-- Products Area -->
+                <div class="products-area">
+                    <!-- Toolbar -->
+                    <div class="shop-toolbar">
+                        <button class="btn-filter-toggle" id="toggleFilters">
+                            <i class="fas fa-filter"></i> Filters
+                        </button>
+                        <div class="results-count" id="resultsCount">Showing all products</div>
+                        <div class="sort-options">
+                            <label for="sortSelect">Sort by:</label>
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name-asc">Name: A to Z</option>
+                                <option value="name-desc">Name: Z to A</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Active Filters -->
+                    <div class="active-filters" id="activeFilters"></div>
+
+                    <!-- Products Grid -->
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be dynamically inserted here -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <button class="page-btn active" data-page="1">1</button>
+                        <button class="page-btn" data-page="2">2</button>
+                        <button class="page-btn" data-page="3">3</button>
+                        <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-shoe-prints"></i>
+                        <span>Zubair</span> Shoes
+                    </a>
+                    <p>Your destination for premium footwear.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>hello@zubairshoes.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zubair Shoes. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({duration: 800, once: true});</script>
+</body>
+</html>

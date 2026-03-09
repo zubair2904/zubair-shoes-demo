@@ -1,0 +1,114 @@
+/* ---- SUPER AWESOME UNIQUE TRANSFORMATIONS ---- */
+
+/* Animated, dynamic background for the whole site */
+body {
+    background: linear-gradient(-45deg, #fff7f0, #ffffff, #ffe4d6, #f0f4ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Stunning Glassmorphic Cards */
+.category-card, .product-card, .feature-card, .testimonial-content {
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+/* Unique Floating Hero Section */
+.hero {
+    position: relative;
+    background: transparent !important;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(255,123,0,0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 4s ease-in-out infinite alternate;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(26,26,46,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulse 6s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8) translate(0, 0); }
+    100% { transform: scale(1.2) translate(50px, 50px); }
+}
+
+/* Re-styled Buttons */
+.btn-primary {
+    border-radius: 50px !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, #1a1a2e, #162447);
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+/* Hover effects for products */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+.product-card:hover {
+    transform: translateY(-15px) scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(255, 123, 0, 0.2) !important;
+}
+
+/* Enhanced footer styling */
+.footer {
+    background: #1a1a2e !important;
+    position: relative;
+    overflow: hidden;
+}
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff7b00, #ffb347);
+}
+
+/* Custom selection */
+::selection {
+    background: #ff7b00;
+    color: white;
+}
