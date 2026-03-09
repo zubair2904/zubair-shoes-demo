@@ -1104,6 +1104,32 @@ p {
     color: var(--text-light);
 }
 
+/* MOBILE CAROUSEL FIX */
+
+.carousel-track{
+    display:flex;
+    gap:20px;
+    transition:transform .4s ease;
+}
+
+.product-card{
+    flex:0 0 260px;
+    min-width:260px;
+}
+
+@media (max-width:768px){
+
+.carousel-track{
+    gap:16px;
+}
+
+.product-card{
+    flex:0 0 220px;
+    min-width:220px;
+}
+
+}
+
 /* Products Grid */
 .products-grid {
     display: grid;
@@ -3069,3 +3095,64 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #ff7b00, #cc6200); 
 }
+
+// SHOP PAGE PRODUCTS
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const grid = document.querySelector(".products-grid");
+
+if(!grid) return;
+
+const products = [
+{
+name:"Zubair Street Sneaker",
+price:"₹4800",
+img:"https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400"
+},
+
+{
+name:"Zubair Classic Formal",
+price:"₹7500",
+img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400"
+},
+
+{
+name:"Zubair Rugged Boot",
+price:"₹8200",
+img:"https://images.unsplash.com/photo-1549639426-52d8332557c6?w=400"
+},
+
+{
+name:"Zubair Comfort Sandal",
+price:"₹3200",
+img:"https://images.unsplash.com/photo-1560769629-975e13f0c470?w=400"
+}
+
+];
+
+grid.innerHTML = products.map(p=>`
+
+<div class="product-card">
+
+<div class="product-image">
+<img src="${p.img}">
+</div>
+
+<div class="product-info">
+
+<h3 class="product-title">${p.name}</h3>
+
+<div class="product-price">
+<span class="current-price">${p.price}</span>
+</div>
+
+<button class="btn btn-primary">Add to Cart</button>
+
+</div>
+
+</div>
+
+`).join("");
+
+});

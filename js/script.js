@@ -307,3 +307,113 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 });
+
+// ===== SHOP PAGE PRODUCTS =====
+
+document.addEventListener("DOMContentLoaded", function () {
+
+const grid = document.getElementById("productsGrid");
+
+if(!grid) return;
+
+const products = [
+{
+name:"Nike Air Max",
+price:"₹8,999",
+image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+},
+
+{
+name:"Adidas Ultraboost",
+price:"₹9,499",
+image:"https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400"
+},
+
+{
+name:"Puma Runner",
+price:"₹6,200",
+image:"https://images.unsplash.com/photo-1512374382149-233c42b6a83b?w=400"
+},
+
+{
+name:"Reebok Classic",
+price:"₹5,999",
+image:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=400"
+},
+
+{
+name:"Formal Leather",
+price:"₹7,500",
+image:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400"
+},
+
+{
+name:"Casual Sneakers",
+price:"₹4,800",
+image:"https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400"
+}
+
+];
+
+grid.innerHTML = products.map(p => `
+<div class="product-card">
+
+<div class="product-image">
+<img src="${p.image}" alt="${p.name}">
+</div>
+
+<div class="product-info">
+<h3 class="product-title">${p.name}</h3>
+
+<div class="product-price">
+<span class="current-price">${p.price}</span>
+</div>
+
+<button class="btn btn-primary">Add to Cart</button>
+
+</div>
+
+</div>
+`).join("");
+
+});
+
+// ===== SHOP FILTER SYSTEM =====
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const products = document.querySelectorAll(".product-card");
+const categoryFilters = document.querySelectorAll("input[name='category']");
+
+if(categoryFilters.length === 0) return;
+
+categoryFilters.forEach(filter => {
+
+filter.addEventListener("change", () => {
+
+let active = [];
+
+categoryFilters.forEach(cb=>{
+if(cb.checked) active.push(cb.value);
+});
+
+products.forEach(product=>{
+
+let name = product.querySelector(".product-title").innerText.toLowerCase();
+
+if(active.length === 0){
+product.style.display = "block";
+return;
+}
+
+let match = active.some(cat => name.includes(cat));
+
+product.style.display = match ? "block" : "none";
+
+});
+
+});
+
+});
+
+});
